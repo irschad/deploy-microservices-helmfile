@@ -5,7 +5,7 @@ This project demonstrates how to deploy a set of microservices on Kubernetes usi
 1. Deploy Microservices with Helm
 2. Deploy Microservices with Helmfile
 
-## Technologies Used
+## Technologies
 - Kubernetes
 - Helm
 - Helmfile
