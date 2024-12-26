@@ -419,6 +419,51 @@ This project demonstrates how to deploy a set of microservices on Kubernetes usi
    ```
    View the application in web browser. 
 
+7. **Cleanup**:
+   To uninstall all the releases, run the following command:
+   ```bash
+   helmfile destroy
+   
+   Building dependency release=frontendservice, chart=charts/microservice
+   Building dependency release=shippingservice, chart=charts/microservice
+   Building dependency release=productcatalogservice, chart=charts/microservice
+   Building dependency release=recommendationservice, chart=charts/microservice
+   Building dependency release=paymentservice, chart=charts/microservice
+   Building dependency release=currencyservice, chart=charts/microservice
+   Building dependency release=cartservice, chart=charts/microservice
+   Building dependency release=emailservice, chart=charts/microservice
+   Building dependency release=rediscart, chart=charts/redis
+   Building dependency release=checkoutservice, chart=charts/microservice
+   Building dependency release=adservice, chart=charts/microservice
+   Deleting frontendservice
+   Deleting checkoutservice
+   Deleting rediscart
+   Deleting adservice
+   Deleting shippingservice
+   Deleting productcatalogservice
+   Deleting recommendationservice
+   Deleting paymentservice
+   Deleting currencyservice
+   Deleting cartservice
+   Deleting emailservice
+   release "cartservice" uninstalled
+   release "checkoutservice" uninstalled
+   release "adservice" uninstalled
+   release "frontendservice" uninstalled
+   release "emailservice" uninstalled
+   release "currencyservice" uninstalled
+   release "rediscart" uninstalled
+   release "recommendationservice" uninstalled
+   release "paymentservice" uninstalled
+   release "shippingservice" uninstalled
+   release "productcatalogservice" uninstalled
+   ```
+
+   Verify that all pods are terminated:
+   ```bash
+   kubectl get pods
+   ```
+
 ## Notes
 - Ensure Kubernetes and Helm are installed and configured correctly before starting the deployment.
 - Helmfile simplifies the management of multiple Helm releases and dependencies.
